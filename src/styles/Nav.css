@@ -1,0 +1,94 @@
+nav{
+  width: 100%;
+  border: 2px solid black;
+  border: none;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+}
+nav .nav-logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav .nav-logo img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+nav .nav-logo h2{
+  font-size: 1.2rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+nav .nav-items{
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+nav .nav-items .navlinks{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--font-two);
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px 0px;
+  margin: 0px 15px;
+}
+nav .nav-items .navlinks.active {
+  color: var(--secondary);
+  transform: scale(1.1);
+  font-weight: 600;
+  position: relative;
+}
+nav .nav-items .navlinks.active::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -18px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+.nav-auth{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.nav-auth .loginbtn, .nav-auth .signupbtn{
+  padding: 8px 0px;
+  font-family: var(--font-one);
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.nav-auth .loginbtn{
+  background-color: transparent;
+  color: var(--black);
+  font-weight: bolder;
+  font-size: 1rem;
+}
+.nav-auth .signupbtn{
+  background-color: var(--secondary);
+  color: var(--white);
+  font-weight: 400;
+  font-family: var(--font-one);
+  font-size: 1rem;
+  padding: 10px 15px;
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --background: #F0F2F5;
+  --light-black: #576076;
+  --primary: #3184fe;
+  --secondary: #fd6932;  
+  --light-secondary: linear-gradient(220deg, rgba(250, 190, 180, 0.1), rgba(250, 190, 180, 0.05));;
+  --card: linear-gradient(135deg,
+  rgba(253, 105, 50, 1) 0%,
+  rgba(253, 105, 50, 0.9) 35%,
+  rgba(253, 105, 50, 0.7) 65%,
+  rgba(253, 105, 50, 0.5) 100%
+);
+  --white: #ffffff;
+  --black: #1A1F2C;
+  --deep-black: #212529;
+  --dark-theme-black: #0E1018;
+  --para-color: #576076;
+  --border: #DBDFE5;
+  --overlay: #000000ac;
+  --fair-color: #2d2d2e5b;
+  --skeleton: #e0e0e057;
+  --font-one: "Inter", sans-serif;
+  --font-two: "Roboto", sans-serif;
+}
+body {
+  width: 100%;
+  transition: all 0.3s ease;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+body::-webkit-scrollbar{
+  display: none; /* Chrome, Safari, Opera */
+}
+#slider-boxes{
+   display: flex !important;
+}
+.slick-slide  div{
+  width: auto !important;
+  margin: 10px !important;
+}
+.slick-arrow{
+  top: 0%;
+}
+.slick-arrow:before{
+  color: red !important;
+  font-size: 50px;
+}
+.slick-prev{
+  right: -60px;
+  bottom: 100%;
+}
+.slick-next{
+  right: 26px;
+  top: 200px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: var(--secondary) !important; /* Or any other color or hex code */
+  background-color: transparent !important;
+}
+
+
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+ /* Example background color */
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* For a circular button */
+  border: 1px solid var(--secondary);
+  z-index: 999;
+  top: 110%;
+}
+.slick-arrow.slick-next{
+  right: 45%;
+}
+.slick-arrow.slick-prev{
+  left: 45%;
+}
+
