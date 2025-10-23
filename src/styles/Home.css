@@ -804,8 +804,7 @@ background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-   top: 100% !important;
-   z-index: 999 !important;
+  z-index: 999 !important;
 }
 .mySwiper .swiper-button-next:hover,
 .mySwiper .swiper-button-prev:hover {
@@ -877,3 +876,153 @@ background-repeat: no-repeat;
   color: var(--secondary);
   font-size: 1.5rem;
 }
+
+
+.Faq{
+  width: 100%;
+  background: url('../assets/accordian_car.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: var(--white);
+  min-height: 70vh;
+  padding: 0px 0px 5% 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.faqHead{
+  text-align: center;
+  padding: 5%;
+}
+.faqHead h3{
+  font-size: 1.1rem;
+  font-weight: bolder;
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  color: var(--black);
+  margin: 0px 0px 5px 0px;
+}
+.faqHead h2{
+  font-size: 2rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin: 0px 0px 10px 0px;
+}
+.faqHead p{
+  width: 60%;
+  font-family: var(--font-one);
+  font-size: 0.9rem;
+  color: var(--para-color);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0px auto;
+}
+.faqAccordionCon{
+  width: 60%;
+  padding: 0px 0px;
+  background-color: var(--white);
+  box-shadow: 0px 1px 5px var(--border);
+  border-radius: 5px;
+}
+.faqAccordion{
+  width: 100%;
+}
+.faqAccordion .accordBtn{
+  width: 100%;
+  padding: 25px 5%;
+  display: flex;
+  align-items: center;
+  justify-content:  space-between;
+  background-color: transparent;
+  color: var(--black);
+  font-size: 1.1rem;
+  border: none;
+  font-family: var(--font-one);
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.accordBtn.active{
+  background-color: var(--secondary);
+  color: var(--white);
+}
+.accordionAns{
+  padding: 3% 5%;
+  background: var(--white);
+  font-size: 0.9rem;
+  color: var(--para-color);
+  font-family: var(--font-one);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+
+
+/******************************download app section***/
+.download-app {
+  color: #fff;
+  padding: 5%;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.download-container {
+  background-color: #ff5733;
+  width: 100%;
+  height: 60vh;
+  padding: 5%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.download-text {
+  width: 100%;
+}
+
+.download-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: var(--font-one);
+  line-height: 1.3;
+}
+
+.download-text h2 span {
+  color: #3533ab;
+}
+
+.download-text p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  font-family: var(--font-one);
+}
+
+.store_buttons{
+  display: flex;
+  align-items: center;
+  align-items: center;
+  border: 1px solid black;
+  gap: 20px;
+}
+.google-btn, 
+.apple-btn{
+  border: 1px solid wheat;
+  width: 20%;
+  padding: 20px;
+  display: inline-block;
+  margin: 0px 20px 0px 0px;
+}
+.google-btn img, 
+.apple-btn img{
+  width: 100%;
+}
+
+
+

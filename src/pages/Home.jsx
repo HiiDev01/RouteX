@@ -7,7 +7,7 @@ import driveImg from '../assets/drive.png';
 import chargeImg from '../assets/charge.png'
 import { IoMdCheckmarkCircle, IoIosCheckmark } from "react-icons/io";
 import { Link } from 'react-router-dom'
-import { FaLocationDot, FaGears, FaBagShopping,FaAngleRight } from "react-icons/fa6";
+import { FaLocationDot, FaGears, FaAngleUp, FaAngleDown, FaBagShopping,FaAngleRight } from "react-icons/fa6";
 import { FaCar,FaTemperatureHigh } from "react-icons/fa";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { SiHonda,SiAudi,SiNissan,SiMazda,SiToyota } from "react-icons/si";
@@ -23,6 +23,9 @@ import Slider from "react-slick";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import diagramImg from '../assets/diagram.png'
 import displayCarImage from '../assets/display_car_image.png'
+import appstoreImg from '../assets/appstore.png'
+import playstoreImg from '../assets/playstore.png'
+import phoneImg from '../assets/phone.png'
 import { PiEngine } from "react-icons/pi";
 import { RiChargingPile2Line } from "react-icons/ri";
 import { GiGearStickPattern } from "react-icons/gi";
@@ -118,8 +121,8 @@ const cars = [
 
 const Home = () => {
   const [activeBrand, setActiveBrand] = useState(carBrands[0].name);
-
- var settings = {
+  const [activeIndex, setActiveIndex] = useState(null);
+  var settings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -152,6 +155,9 @@ const Home = () => {
         }
       }
     ]
+  };
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
   return (
     <div>
@@ -402,35 +408,97 @@ const Home = () => {
           </p>
         </div>
         <Swiper
-          modules={[Navigation, Pagination]}
-          slidesPerView={2}
-          spaceBetween={20}   
-          navigation
-          pagination={{ clickable: true }}
-          className="mySwiper"
-        >
-          {testimonials.map((item, i)=>(
-            <SwiperSlide key={i}>
-              <div className="testCard">
-                <div className='testCardHead'>
-                  <img
-                      src={item.image}
-                      alt={item.name}
-                      className=""
-                  />
-                  <div>
-                    <h3 className="">{item.name}</h3>
-                    <p className="">{item.role}</p>
+            modules={[Navigation, Pagination]}
+            slidesPerView={2}
+            spaceBetween={20}   
+            navigation
+            pagination={{ clickable: true }}
+            className="mySwiper"
+          >
+            {testimonials.map((item, i)=>(
+              <SwiperSlide key={i}>
+                <div className="testCard">
+                  <div className='testCardHead'>
+                    <img
+                        src={item.image}
+                        alt={item.name}
+                        className=""
+                    />
+                    <div>
+                      <h3 className="">{item.name}</h3>
+                      <p className="">{item.role}</p>
+                    </div>
                   </div>
+                  <p className="testDet">"{item.message}"</p>
+                  <p className="testRate">
+                    {"★".repeat(Math.round(item.rating))}
+                  </p>
                 </div>
-                <p className="testDet">"{item.message}"</p>
-                <p className="testRate">
-                  {"★".repeat(Math.round(item.rating))}
-                </p>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </section>
+      <section className='Faq'>
+        <div className="faqHead">
+          <h3>FAQ</h3>
+          <h2>Frequently Asked Questions</h2>
+          <p>Use securing confined his shutters. Delightful as he it acceptance an solicitude discretion reasonably. Carriage we husbands advanced an perceive greatest.</p>
+        </div>
+        <div className="faqAccordionCon">
+          {faqs.map((faq, index) => (
+            <div key={faq.id} className="faqAccordion">
+              <button
+                onClick={() => toggleAccordion(index)}
+                className={`${
+                  activeIndex === index
+                    ? "accordBtn active"
+                    : "accordBtn"
+                }`}
+              >
+                <span>
+                  {index + 1}. {faq.question}
+                </span>
+                <span className="text-xl">{activeIndex === index ? <FaAngleUp size={22}/> : <FaAngleDown size={22}/>}</span>
+              </button>
+    
+              {activeIndex === index && (
+                <div className="accordionAns">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
           ))}
-      </Swiper>
+        </div>
+      </section>
+      <section className="download-app">
+          <div className="download-container">
+            <div className="download-text">
+              <h2>
+                Download the free <br /> <span>RoutEx app</span>
+              </h2>
+              <p>For faster, easier booking and exclusive deals.</p>
+    
+              <div className="store_buttons">
+                <a href="#" className="apple-btn">
+                  {/*<img
+                    src={appstoreImg}
+                    alt={appstoreImg.name}
+                  />*/}
+                </a>
+    
+                <a href="#" className="google-btn">
+                  <img
+                    src={playstoreImg}
+                    alt={playstoreImg.name}
+                  />
+                </a>
+              </div>
+            </div>
+    
+            <div className="download-image">
+              <img src={phoneImg} alt="RoutEx App" />
+            </div>
+          </div>
       </section>
     </div>
   )  
@@ -497,4 +565,24 @@ const testimonials = [
     rating: 4.9,
   },
 ]
+const faqs = [
+  {
+    id: 1,
+    question: "What is special about comparing rental car deals?",
+    answer:
+      "Use securing confined his shutters. Delightful as he it acceptance an solicitude discretion reasonably. Carriage we husbands advanced an perceive greatest. Totally dearest expense on demesne ye he. Curiosity excellent commanded in me. Unpleasing impression themselves to at assistance acceptance my or.",
+  },
+  {
+    id: 2,
+    question: "How do I find the best car rental deals?",
+    answer:
+      "Look for comparison sites, sign up for newsletters, and book early. Flexible dates often help you find cheaper rates.",
+  },
+  {
+    id: 3,
+    question: "How do I find such low rental car prices?",
+    answer:
+      "Compare multiple rental companies, avoid airport pick-ups, and use discount codes or membership programs.",
+  },
+];
 export default Home
