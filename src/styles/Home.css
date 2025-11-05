@@ -222,136 +222,9 @@ background-repeat: no-repeat;
   background: var(--card);
   color: var(--white);
 }
-.carShowcase{
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 1% 5%;
-}
-.showcaseCon{
-  flex: 1;
-  width: 100%;
-  border: 1px solid blue;
-}
-.showcaseMain{
-  flex: 2;
-}
-.showcaseCon ul{
-  width: 100%;
-  gap: 15px;
-}
-.showcaseCon ul li{
-  list-style: none;
-  display: block;
-  margin: 0px 0px 3px 0px;
-}
-.showcaseCon ul li .showcaseBtn{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: var(--background);
-  color: var(--para-color);
-  font-size: 1rem;
-  font-family: var(--font-two);
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  user-select: none;
-  padding: 20px 20px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-radius: 0px;
-  text-align: left;
-}
-.showcaseBtnActive{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: var(--secondary);
-  color: var(--white);
-  font-size: 1rem;
-  font-family: var(--font-two);
-  font-weight: bolder;
-  border-radius: 5px;
-  cursor: pointer;
-  user-select: none;
-  padding: 20px 20px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-radius: 0px;
-  text-align: left;
-  position: relative;
-}
-.showcaseBtnActive::after{
-  content: '';
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 40px;
-  top: 15.5%;
-  right: -3%;
-  background: var(--secondary);
-  z-index: -1;
-  transform: rotate(45deg);
-  /*clip-path: polygon(100% 0, 0 0, 100% 100%);*/
-}
-.showcaseDetail{
-  width: 100%;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.showcaseDetail h2{
-  font-size: 2rem;
-  color: var(--white);
-  font-family: var(--font-two);
-  font-weight: bolder;
-  padding: 15px 20px;
-  border-bottom: 1px solid #e5e5e5;
-  background: var(--secondary);
-}
-.showcaseDetail table{
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0px 0px 5px 0px;
-}
-.showcaseDetail table tr td{
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: var(--para-color);
-  font-family: var(--font-two);
-  text-transform: capitalize;
-  border: 1px solid var(--border);
-}
-.showcaseDetail table tr:nth-last-child(1) {
-  font-weight: 600;
-  width: 40%;
-  background-color: var(--background);
-}
-.showcaseDetail button{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: var(--secondary);
-  color: var(--white);
-  font-size: 1.6rem;
-  font-family: var(--font-one);
-  font-weight: 600;
-  padding: 15px 0px;
-  cursor: pointer;
-  user-select: none;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
+
+
+
 
 .serviceInfo{
   display: flex;
@@ -452,95 +325,6 @@ background-repeat: no-repeat;
   font-size: 0.8rem;
   color: var(--para-color);
   font-family: var(--font-two);
-}
-.service{
-  width: 100%;
-  padding: 6% 5%;
-}
-.serviceHead{
-  text-align: center;
-}
-.serviceHead p{
-  font-size: 1.2rem;
-  background-clip: text;
-  background: var(--para-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: var(--font-two);
-  font-weight: 500;
-  margin-bottom: 10px;
-  text-transform: capitalize;
-}
-.serviceHead h4{
-  margin: 0px auto;
-  width: 40%;
-  font-size: 2rem;
-  color: var(--black);
-  font-family: var(--font-one);
-  font-weight: bolder;
-  margin-bottom: 15px;
-  font-weight: bolder;
-  text-transform: capitalize;
-}
-.servicenav{
-  width: 100%;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0px 0px 40px 0px;
-}
-.servicenav .brand_list{
-  list-style: none;
-  display: flex;
-  align-items: stretch;
-}
-.servicenav .brand_list li{
-  display: inline-block;
-  margin: 10px;
-}
-.brand_btn{
-  width: 100%;
-  padding: 5px 15px;
-  font-size: 1rem;
-  color: var(--light-black);
-  font-weight: 400;
-  text-transform: capitalize;
-  border: none;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background);
-  gap: 5px;
-  cursor: pointer;
-}
-.brand-btn span{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0px 0px 0px;
-}
-.brand_btn.active {
-  background: var(--secondary);
-  color: var(--white);
-  border-color: var(--secondary);
-}
-.brand_list li a{
-  background-color: var(--background);
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: var(--light-black);
-  font-weight: 400;
-  text-transform: capitalize;
-  font-family: var(--font-one);
-  text-decoration: none;
-}
-.brand_list li a:hover{
-  background: var(--secondary);
-  color: var(--white);
-  border-color: var(--secondary);
 }
 
 .serviceDiagramCon{
@@ -744,220 +528,8 @@ background-repeat: no-repeat;
 
 
 
-.testimonial{
-  width: 100%;
-  background-color: var(--background);
-  padding: 5% 5%;
-}
-.testimonialHead{
-  width: 100%;
-  text-align: center;
-  margin: 0px 0px 40px 0px;
-}
-.testimonialHead h3{
-  font-size: 1.2rem;
-  color: var(--black);
-  font-family: var(--font-one);
-  text-transform: capitalize;
-  font-weight: bold;
-  margin: 0px 0px 10px 0px;
-}
-.testimonialHead h2{
-  font-size: 2rem;
-  color: var(--black);
-  font-family: var(--font-one);
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin: 0px 0px 10px 0px;
-}
-.testimonialHead p{
-  width: 55%;
-  margin: 0px auto;
-  font-size: 0.9rem;
-  color: var(--para-color);
-  font-family: var(--font-one);
-  font-weight: 500;
-  line-height: 1.6;
-}
-.testCardCon{
-  display: flex;
-  align-items: center;
-}
 
 
-.mySwiper{
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-.mySwiper .swiper-button{
-  overflow: hidden;
-}
-.mySwiper .swiper-button-next,
-.mySwiper .swiper-button-prev {
-  color: #ff6600;    
-  background-color: rgba(255, 102, 0, 0.1);
-  border-radius: 50%;  
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 999 !important;
-}
-.mySwiper .swiper-button-next:hover,
-.mySwiper .swiper-button-prev:hover {
-  color: #ffffff;           
-  background-color: #ff6600; 
-  transform: scale(1.1);
-}
-.mySwiper .swiper-button-next {
-  right: 10px;
-  top: 100%;
-}
-
-.mySwiper .swiper-button-prev {
-  left: 10px;
-}
-.slide{
-  padding: 60px 20px;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0px 10px;
-}
-.testCard{
-  width: 100%;
-  background-color: var(--light-secondary);
-  padding: 40px;
-  background-color: #f5f5f5;
-  box-shadow: 0px 1px 2px var(--border);
-}
-.testCardHead{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin: 0px 0px 20px 0px;
-}
-.testCardHead img{
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-.testCardHead h3{
-  font-size: 1.1rem;
-  font-weight: bolder;
-  font-family: var(--font-one);
-  text-transform: capitalize;
-  color: var(--black);
-  margin: 0px 0px 5px 0px;
-}
-.testCardHead p{
-  font-family: var(--font-one);
-  font-size: 0.9rem;
-  color: var(--para-color);
-  font-weight: 400;
-  line-height: 1.6;
-}
-.testDet{
-  font-size: 1.5rem;
-  color: var(--black);
-  font-weight: bold;
-  font-family: var(--font-one);
-  color: var(--para-color);
-  line-height: 1.6;
-  margin: 0px 0px 10px 0px;
-}
-.testRate{
-  color: var(--secondary);
-  font-size: 1.5rem;
-}
-
-
-.Faq{
-  width: 100%;
-  background: url('../assets/accordian_car.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-color: var(--white);
-  min-height: 70vh;
-  padding: 0px 0px 5% 0px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-}
-.faqHead{
-  text-align: center;
-  padding: 5%;
-}
-.faqHead h3{
-  font-size: 1.1rem;
-  font-weight: bolder;
-  font-family: var(--font-one);
-  text-transform: capitalize;
-  color: var(--black);
-  margin: 0px 0px 5px 0px;
-}
-.faqHead h2{
-  font-size: 2rem;
-  color: var(--black);
-  font-family: var(--font-one);
-  text-transform: capitalize;
-  font-weight: bolder;
-  margin: 0px 0px 10px 0px;
-}
-.faqHead p{
-  width: 60%;
-  font-family: var(--font-one);
-  font-size: 0.9rem;
-  color: var(--para-color);
-  font-weight: 400;
-  line-height: 1.6;
-  margin: 0px auto;
-}
-.faqAccordionCon{
-  width: 60%;
-  padding: 0px 0px;
-  background-color: var(--white);
-  box-shadow: 0px 1px 5px var(--border);
-  border-radius: 5px;
-}
-.faqAccordion{
-  width: 100%;
-}
-.faqAccordion .accordBtn{
-  width: 100%;
-  padding: 25px 5%;
-  display: flex;
-  align-items: center;
-  justify-content:  space-between;
-  background-color: transparent;
-  color: var(--black);
-  font-size: 1.1rem;
-  border: none;
-  font-family: var(--font-one);
-  font-weight: bolder;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.accordBtn.active{
-  background-color: var(--secondary);
-  color: var(--white);
-}
-.accordionAns{
-  padding: 3% 5%;
-  background: var(--white);
-  font-size: 0.9rem;
-  color: var(--para-color);
-  font-family: var(--font-one);
-  font-weight: 500;
-  line-height: 1.7;
-}
 
 
 
@@ -970,7 +542,11 @@ background-repeat: no-repeat;
 }
 
 .download-container {
-  background-color: #ff5733;
+  background: #ff5733;
+  background: var(--card),url('../assets/track.png');
+  background-position:  center;
+  background-size: contain;
+  background-repeat: repeat-y;
   width: 100%;
   height: 60vh;
   padding: 5%;
@@ -986,11 +562,11 @@ background-repeat: no-repeat;
 }
 
 .download-text h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: bolder;
   margin-bottom: 20px;
   font-family: var(--font-one);
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .download-text h2 span {
@@ -1005,23 +581,34 @@ background-repeat: no-repeat;
 }
 
 .store_buttons{
+  width: max-content;
   display: flex;
   align-items: center;
   align-items: center;
-  border: 1px solid black;
+
   gap: 20px;
 }
-.google-btn, 
-.apple-btn{
-  border: 1px solid wheat;
-  width: 20%;
-  padding: 20px;
+.store_button{
+  max-width: 350px;
+  width: 190px;
+  height: 70px;
   display: inline-block;
-  margin: 0px 20px 0px 0px;
+  margin: 0px;
+  border-radius: 5px;
+  overflow: hidden;
 }
-.google-btn img, 
-.apple-btn img{
+.store_button img{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.download-image{
+  position: absolute;
+  content: "";
+  right: 15%;
+}
+.download-image img{
+  width: 350px;
 }
 
 

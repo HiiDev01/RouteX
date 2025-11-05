@@ -1,0 +1,29 @@
+.service{
+  width: 100%;
+  padding: 6% 5%;
+}
+.serviceHead{
+  text-align: center;
+}
+.serviceHead p{
+  font-size: 1.2rem;
+  background-clip: text;
+  background: var(--para-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-two);
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.serviceHead h4{
+  margin: 0px auto;
+  width: 40%;
+  font-size: 2rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  font-weight: bolder;
+  margin-bottom: 15px;
+  font-weight: bolder;
+  text-transform: capitalize;
+}

@@ -10,152 +10,29 @@ import { Link } from 'react-router-dom'
 import { FaLocationDot, FaGears, FaAngleUp, FaAngleDown, FaBagShopping,FaAngleRight } from "react-icons/fa6";
 import { FaCar,FaTemperatureHigh } from "react-icons/fa";
 import { BsFillCalendarDateFill } from "react-icons/bs";
-import { SiHonda,SiAudi,SiNissan,SiMazda,SiToyota } from "react-icons/si";
 import { IoPricetags } from "react-icons/io5";
 import FilterCard from '../component/FilterCard'
 import  lineUp from '../assets/lineup.png'
 import lineDown from '../assets/linedown.png'
-import { SlCalender } from "react-icons/sl";
-import CarCard from '../component/CarCard';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import diagramImg from '../assets/diagram.png'
 import displayCarImage from '../assets/display_car_image.png'
 import appstoreImg from '../assets/appstore.png'
 import playstoreImg from '../assets/playstore.png'
+import Footer from '../component/footer/Footer'
 import phoneImg from '../assets/phone.png'
 import { PiEngine } from "react-icons/pi";
 import { RiChargingPile2Line } from "react-icons/ri";
 import { GiGearStickPattern } from "react-icons/gi";
-import avatar from '../assets/avatar.png'
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay, Scrollbar } from "swiper/modules";
-
-
-
-const showList = [
-  {id: 1,  name: "roadwagler", type: ""},
-  {  id: 2,  name: "SUV", type: ""},
-  {  id: 3,  name: "Sedan", type: ""},
-  {  id: 4,  name: "Hatchback", type: ""},
-  {  id: 5,  name: "Convertible", type: ""},
-  {  id: 6,  name: "Coupe", type: ""},
-  {  id: 7,  name: "Benz", type: ""},
-]
-const showDetail = [
-  {
-    "price_per_day": 37.40,
-    "currency": "$",
-    "model": "Limousine",
-    "doors": 4,
-    "seats": 5,
-    "luggage": "2 Suitcases / 2 Bags",
-    "transmission": "Automatic",
-    "air_conditioning": true,
-    "minimum_age": 25
-  }
-]
-const carBrands = [
-  { name: "Honda", icon: <SiHonda size={25} /> },
-  { name: "Audi", icon: <SiAudi size={25} /> },
-  { name: "Nissan", icon: <SiNissan size={25} /> },
-  { name: "Mazda", icon: <SiMazda size={25} /> },
-  { name: "Toyota", icon: <SiToyota size={25} /> },
-];
-
-const cars = [
-  {
-    id: 1,
-    year: 2020,
-    name: "Honda Pilot",
-    price: 38500,
-    monthly: 322,
-    mileage: 20,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/honda-pilot.png",
-    isFavourite: true,
-  },
-  {
-    id: 2,
-    year: 2019,
-    name: "Honda Civic Si Sedan",
-    price: 25200,
-    monthly: 299,
-    mileage: 30,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/honda-civic.png",
-    isFavourite: false,
-  },
-  {
-    id: 3,
-    year: 2017,
-    name: "Clarity Plug-In Hybrid",
-    price: 33400,
-    monthly: 300,
-    mileage: 15,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/clarity.png",
-    isFavourite: false,
-  },
-    {
-    id: 4,
-    year: 2017,
-    name: "Clarity Plug-In Hybrid",
-    price: 33400,
-    monthly: 300,
-    mileage: 15,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/clarity.png",
-    isFavourite: false,
-  },
-];
+import CarShow from '../component/CarShow';
+import DealerCar from '../component/DealerCar';
+import Testimonial from '../component/Testimonial';
+import Faq from '../component/Faq';
 
 
 const Home = () => {
-  const [activeBrand, setActiveBrand] = useState(carBrands[0].name);
   const [activeIndex, setActiveIndex] = useState(null);
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -218,65 +95,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='carShowcase'>
-        <div className='showcaseCon'>
-          <ul>
-            {showList.map((item, index) => (
-              <li key={index}>
-                <button 
-                  key={item.id}
-                  className={(item.id === 1) ? 'showcaseBtnActive' : 'showcaseBtn'}
-                >
-                  {item.name} {item.type}
-                </button>
-              </li>
-            ))} 
-          </ul>
-        </div>
-        <div className='showcaseCon showcaseMain'>
-
-        </div>
-        <div className='showcaseCon'>
-          {showDetail.map((detail, index) => (
-            <div className='showcaseDetail' key={index}>
-              <h2>{detail.currency}{detail.price_per_day}/<span>day</span></h2> 
-              <table>
-                  <tbody>
-                  <tr>
-                    <td>model</td>
-                    <td>{detail.model}</td>
-                  </tr>
-                  <tr>
-                    <td>Doors</td>
-                    <td>{detail.doors}</td>
-                  </tr>
-                  <tr>
-                    <td>Seats</td>
-                    <td>{detail.seats}</td>
-                  </tr>
-                  <tr>
-                    <td>Luggage</td>
-                    <td>{detail.luggage}</td>
-                  </tr>
-                  <tr>
-                    <td>Transmission</td>
-                    <td>{detail.transmission}</td>
-                  </tr>
-                  <tr>
-                    <td>Air conditioning</td>
-                    <td>{detail.air_conditioning ? "yes" : "No" }</td>
-                  </tr>
-                  <tr>
-                    <td>minimum_age</td>
-                    <td>{detail.minimum_age}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <button><span><SlCalender size={30}/></span>reserve Now</button>
-            </div>
-          ))}
-        </div>
-      </section>
+      <CarShow/>
       <section className='serviceInfo'>
         <div className='serviceImgCon'>
           <img src={rangeImg} alt="illus"/>
@@ -315,37 +134,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='service'>
-        <div className='serviceHead'>
-          <p>best service</p>
-          <h4>Explore of top deal from out top-rated dealer</h4>
-        </div>
-        <nav className='servicenav'>
-          <ul className='brand_list'>
-            {carBrands.map((brand, index) => (
-              <li key={index}>
-                <button 
-                  className={`brand_btn ${activeBrand === brand.name ? "active" : ""}`}
-                  onClick={() => setActiveBrand(brand.name)}
-                >
-                  <span>{brand.icon}</span>
-                  {brand.name}
-                </button>
-              </li>
-            ))}
-            <li>
-              <a href="/">explore 20+</a>
-            </li>
-          </ul>
-        </nav>
-        <article className='car_list'>
-          <Slider {...settings}>
-            {cars.map((car)=>(
-              <CarCard key={car.id} car={car}/>
-            ))}
-          </Slider>
-        </article>
-      </section>
+      <DealerCar />
       <section className='serviceDiagramCon'>
         <div className='serviceDiagram'>
           <h2>We are ensuring the best customer experience</h2>
@@ -396,80 +185,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='testimonial'>
-        <div className='testimonialHead'>
-          <h3>Reviewed by People</h3>
-          <h2>Clients' Testimonials</h2>
-          <p>
-            Certain but she but shyness why cottage. 
-            Guy the put instrument sir entreaties affronting. 
-            Pretended exquisite see cordially the you. Weeks 
-            quiet do vexed.
-          </p>
-        </div>
-        <Swiper
-            modules={[Navigation, Pagination]}
-            slidesPerView={2}
-            spaceBetween={20}   
-            navigation
-            pagination={{ clickable: true }}
-            className="mySwiper"
-          >
-            {testimonials.map((item, i)=>(
-              <SwiperSlide key={i}>
-                <div className="testCard">
-                  <div className='testCardHead'>
-                    <img
-                        src={item.image}
-                        alt={item.name}
-                        className=""
-                    />
-                    <div>
-                      <h3 className="">{item.name}</h3>
-                      <p className="">{item.role}</p>
-                    </div>
-                  </div>
-                  <p className="testDet">"{item.message}"</p>
-                  <p className="testRate">
-                    {"★".repeat(Math.round(item.rating))}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      </section>
-      <section className='Faq'>
-        <div className="faqHead">
-          <h3>FAQ</h3>
-          <h2>Frequently Asked Questions</h2>
-          <p>Use securing confined his shutters. Delightful as he it acceptance an solicitude discretion reasonably. Carriage we husbands advanced an perceive greatest.</p>
-        </div>
-        <div className="faqAccordionCon">
-          {faqs.map((faq, index) => (
-            <div key={faq.id} className="faqAccordion">
-              <button
-                onClick={() => toggleAccordion(index)}
-                className={`${
-                  activeIndex === index
-                    ? "accordBtn active"
-                    : "accordBtn"
-                }`}
-              >
-                <span>
-                  {index + 1}. {faq.question}
-                </span>
-                <span className="text-xl">{activeIndex === index ? <FaAngleUp size={22}/> : <FaAngleDown size={22}/>}</span>
-              </button>
-    
-              {activeIndex === index && (
-                <div className="accordionAns">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      <Testimonial/>
+      <Faq activeIndex={activeIndex} toggleAccordion={toggleAccordion}/>
       <section className="download-app">
           <div className="download-container">
             <div className="download-text">
@@ -479,14 +196,14 @@ const Home = () => {
               <p>For faster, easier booking and exclusive deals.</p>
     
               <div className="store_buttons">
-                <a href="#" className="apple-btn">
-                  {/*<img
+                <a href="#" className="store_button apple-btn">
+                  <img
                     src={appstoreImg}
                     alt={appstoreImg.name}
-                  />*/}
+                  />
                 </a>
     
-                <a href="#" className="google-btn">
+                <a href="#" className="store_button google-btn">
                   <img
                     src={playstoreImg}
                     alt={playstoreImg.name}
@@ -499,6 +216,9 @@ const Home = () => {
               <img src={phoneImg} alt="RoutEx App" />
             </div>
           </div>
+      </section>
+      <section>
+        < Footer />
       </section>
     </div>
   )  
@@ -527,62 +247,4 @@ const choosingUs = [
     icon: chargeImg
   }
 ]
-const testimonials = [
-   {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "Marketing Manager",
-    image: avatar,
-    message:
-      "The service was excellent and the car was spotless. Booking was easy, and I loved the transparency in pricing — no hidden fees at all!",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "David Kim",
-    role: "Freelance Developer",
-    image: avatar,
-    message:
-      "Absolutely fantastic experience! The team made everything smooth from pickup to drop-off. I’ll definitely use them again.",
-    rating: 4.8,
-  },
-  {
-    id: 3,
-    name: "Amelia Thompson",
-    role: "Business Consultant",
-    image: avatar,
-    message:
-      "Professional and reliable. The inclusive pricing was a breath of fresh air compared to other rental services. Highly recommended!",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Michael Brown",
-    role: "Travel Blogger",
-    image: avatar,
-    message:
-      "One of the best car rental experiences I’ve had. Great support team, clean cars, and affordable deals across multiple locations.",
-    rating: 4.9,
-  },
-]
-const faqs = [
-  {
-    id: 1,
-    question: "What is special about comparing rental car deals?",
-    answer:
-      "Use securing confined his shutters. Delightful as he it acceptance an solicitude discretion reasonably. Carriage we husbands advanced an perceive greatest. Totally dearest expense on demesne ye he. Curiosity excellent commanded in me. Unpleasing impression themselves to at assistance acceptance my or.",
-  },
-  {
-    id: 2,
-    question: "How do I find the best car rental deals?",
-    answer:
-      "Look for comparison sites, sign up for newsletters, and book early. Flexible dates often help you find cheaper rates.",
-  },
-  {
-    id: 3,
-    question: "How do I find such low rental car prices?",
-    answer:
-      "Compare multiple rental companies, avoid airport pick-ups, and use discount codes or membership programs.",
-  },
-];
 export default Home

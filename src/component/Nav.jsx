@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 const navitem = [
   { name: 'Home', link: '/'},
   { name: 'About', link: '/about' },
-  { name: 'vehicle model', link: '/vehiclemodel' },
+  { name: 'vehicle model', link: '/vehicle' },
   { name: 'Services', link: '/services' },
   { name: 'testimonial', link: '/testimonial' },
   { name: 'ourteam', link: '/ourteam' },

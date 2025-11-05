@@ -1,0 +1,61 @@
+.servicenav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 40px 0px;
+}
+.servicenav .brand_list{
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.servicenav .brand_list li{
+  display: inline-block;
+  margin: 10px;
+}
+.brand_btn{
+  width: 100%;
+  padding: 10px 40px;
+  font-size: 1rem;
+  color: var(--light-black);
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  gap: 5px;
+  cursor: pointer;
+}
+.brand-btn span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+}
+.brand_btn.active {
+  background: var(--secondary);
+  color: var(--white);
+  border-color: var(--secondary);
+}
+.brand_list li a{
+  background-color: var(--background);
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1rem;
+  color: var(--light-black);
+  font-weight: bold;
+  text-transform: capitalize;
+  font-family: var(--font-one);
+  text-decoration: none;
+  border-radius: 2px;
+}
+.brand_list li a:hover{
+  background: var(--secondary);
+  color: var(--white);
+  border-color: var(--secondary);
+}

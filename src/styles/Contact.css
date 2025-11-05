@@ -1,0 +1,115 @@
+.contact{
+  width: 100%;
+}
+.contactSec{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 5% 3%;
+  background: linear-gradient(rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.8)), url('../assets/hii.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+.contactDetail{
+  width: 40%;
+  min-height: 100px;
+  padding: 20px 0px;
+}
+.contacts h2{
+  font-size: 4rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  font-weight: bolder;
+  line-height: 1;
+  margin: 0px 0px 20px 0px;
+}
+.contactparatxt{
+  font-family: var(--font-one);
+  font-weight: 400;
+  color: var(--para-color);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0px 0px 40px 0px;
+}
+.contactInfo{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
+}
+.contactInfo p{
+  font-size: 1.2rem;
+  font-family: var(--font-one);
+  font-weight: 500;
+  color: var(--black);
+  font-family: var(--font-two);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contactInfoIcon{
+  color: var(--black);
+}
+.ContactForm{
+  flex: 1;
+  padding: 10px 5%;
+}
+.ContactForm Form{
+  width: 100%;
+}
+.contactField{
+  margin: 0px 0px 20px 0px;
+}
+.contactField label{
+  display: block;
+  color: var(--para-color);
+  font-size: 1rem;
+  font-family: var(--font-two);
+  text-transform: capitalize;
+  margin: 0px 0px 15px 0px;
+  font-weight: 500;
+}
+.contactField label sup{
+  color: orangered;
+}
+.contactField input{
+  width: 100%;
+  padding: 20px 10px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  outline: none;
+}
+.contactField input:focus{
+  border: 1px solid orangered;
+}
+.contactField textarea{
+  width: 100%;
+  resize: none;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  outline: none;
+  padding: 10px;
+}
+.contactField textarea:focus{
+  border: 1px solid orangered;
+}
+.ContactForm button{
+  padding: 20px;
+  font-size: 1.2rem;
+  color: var(--white);
+  background: orangered;
+  border: none;
+  font-family: var(--font-two);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ContactForm button:hover{
+  opacity: 0.9;
+  transition: 0.2s ease-in-out;
+}

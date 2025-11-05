@@ -1,0 +1,132 @@
+.testimonial{
+  width: 100%;
+  background-color: var(--background);
+  padding: 5% 5%;
+}
+.testimonialHead{
+  width: 100%;
+  text-align: center;
+  margin: 0px 0px 40px 0px;
+}
+.testimonialHead h3{
+  font-size: 1.2rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+}
+.testimonialHead h2{
+  font-size: 2rem;
+  color: var(--black);
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin: 0px 0px 10px 0px;
+}
+.testimonialHead p{
+  width: 55%;
+  margin: 0px auto;
+  font-size: 0.9rem;
+  color: var(--para-color);
+  font-family: var(--font-one);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.testCardCon{
+  display: flex;
+  align-items: center;
+}
+
+
+.mySwiper{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.mySwiper .swiper-button{
+  overflow: hidden;
+}
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #ff6600;    
+  background-color: rgba(255, 102, 0, 0.1);
+  border-radius: 50%;  
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999 !important;
+}
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  color: #ffffff;           
+  background-color: #ff6600; 
+  transform: scale(1.1);
+}
+.mySwiper .swiper-button-next {
+  right: 10px;
+  top: 100%;
+}
+
+.mySwiper .swiper-button-prev {
+  left: 10px;
+}
+.slide{
+  padding: 60px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+.testCard{
+  width: 100%;
+  background-color: var(--light-secondary);
+  padding: 40px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 1px 2px var(--border);
+}
+.testCardHead{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0px 0px 20px 0px;
+}
+.testCardHead img{
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.testCardHead h3{
+  font-size: 1.1rem;
+  font-weight: bolder;
+  font-family: var(--font-one);
+  text-transform: capitalize;
+  color: var(--black);
+  margin: 0px 0px 5px 0px;
+}
+.testCardHead p{
+  font-family: var(--font-one);
+  font-size: 0.9rem;
+  color: var(--para-color);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.testDet{
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: bold;
+  font-family: var(--font-one);
+  color: var(--para-color);
+  line-height: 1.6;
+  margin: 0px 0px 10px 0px;
+}
+.testRate{
+  color: var(--secondary);
+  font-size: 1.5rem;
+}

@@ -1,0 +1,154 @@
+.footer {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  padding: 60px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 5%;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-column h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #000;
+}
+
+.newsletter-input {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.newsletter-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.newsletter-input button {
+  background-color: #ff6433;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.newsletter-input button:hover {
+  background-color: #e55828;
+}
+
+.rating {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.stars {
+  font-size: 14px;
+  color: #ffb400;
+  margin-bottom: 8px;
+}
+
+.clutch-link {
+  font-size: 14px;
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.clutch-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+.social-icons span{
+  background: var(--white);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 1px 3px var(--border);
+  border-radius: 5px;
+}
+
+.social-icons span:hover {
+  color: #ff6433;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
