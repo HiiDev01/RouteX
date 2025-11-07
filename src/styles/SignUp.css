@@ -1,0 +1,146 @@
+.auth-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-left, .auth-right {
+  flex: 1;
+  padding: 60px;
+}
+
+.auth-left {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-switch {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.auth-switch a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-left h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #111;
+}
+
+.brand {
+  color: #3b82f6;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form label {
+  font-weight: 500;
+}
+
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.auth-btn {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: #2563eb;
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+}
+
+.auth-right {
+  background-color: #1d4ed8;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.quote {
+  max-width: 350px;
+  text-align: left;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  margin-bottom: -10px;
+}
+
+.quote h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.quote-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}

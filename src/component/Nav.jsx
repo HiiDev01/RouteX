@@ -9,7 +9,7 @@ const navitem = [
   { name: 'vehicle model', link: '/vehicle' },
   { name: 'Services', link: '/services' },
   { name: 'testimonial', link: '/testimonial' },
-  { name: 'ourteam', link: '/ourteam' },
+  { name: 'ourteam', link: '/team' },
   { name: 'Contact', link: '/contact' },
 ]
 const Nav = () => {
@@ -32,7 +32,7 @@ const Nav = () => {
       </div>
       <div className='nav-auth'>
         <a href='/login' className='loginbtn'>Login</a>
-        <a href='/' className='signupbtn'>Register</a>
+        <a href='/signup' className='signupbtn'>Register</a>
       </div>
     </nav>
   )

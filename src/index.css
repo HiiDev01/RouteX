@@ -9,7 +9,8 @@
   --background: #F0F2F5;
   --light-black: #576076;
   --primary: #3184fe;
-  --secondary: #fd6932;  
+  /*--secondary: #fd6932;  */
+  --secondary: #ff4d00;
   --light-secondary: linear-gradient(220deg, rgba(250, 190, 180, 0.1), rgba(250, 190, 180, 0.05));;
   --card: linear-gradient(135deg,
   rgba(253, 105, 50, 1) 0%,
