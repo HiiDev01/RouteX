@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCarSide, FaSuitcase, FaChair } from "react-icons/fa";
 import { IoStar, IoCallSharp } from "react-icons/io5";
 import { IoIosCheckmarkCircle,IoMdCheckmarkCircle } from "react-icons/io";
@@ -9,6 +9,9 @@ import inboxIcon3 from '../assets/iconbox-image_03.png'
 import Steps from '../component/Steps';
 import '../styles/Vehicle.css';
 import Footer from '../component/footer/Footer';
+import { useLocation } from 'react-router-dom';
+import { supabase } from '../SupabaseClient/Client';
+
 
 const Vehicle = () => {
   const steps = [
@@ -63,48 +66,90 @@ const Vehicle = () => {
     transmission: "automatic"
   },
   ];
+  const [vehicle, setVehicle] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const location = useLocation()
+
+  const queryParams = new URLSearchParams(location.search)
+  const carType = queryParams.get('carType');
+  const carLocation = queryParams.get('carLocation');
+
+  useEffect(()=>{
+    const fetchVehicle = async()=>{
+      try {
+        let filters = supabase.from('cars').select('*')
+        if(carType){
+          filters = filters.eq('type', carType)
+        }
+        if (carLocation) {
+          filters = filters.eq("location", carLocation);
+        }
+
+        const {data, error} = await filters
+        if(error){
+          console.error("Error fetching cars:", error);
+          return;
+        }else{
+          setVehicle(data);
+        } 
+      } catch (error) {
+        console.log('error occur in fetchvehicle')
+      }
+    }
+
+    fetchVehicle();
+    
+  }, [carType, carLocation])
+
   return (
     <main className='vehicle'>
       <section className='vechileCon'>
-        {cars.map((car) => (
-        <div className="vehicle-card" key={car.id}>
-          <img src={car.image} alt={car.name} className="vehicle-image" />
-          <div className="car-info">
-            <div className='car-infoHead'>
-              <div>
-                <h3>{car.name}</h3>
-                <div className="rating">
-                  {Array.from({ length: car.rating }, (_, index) => (
-                    <IoStar key={index} size={20} className='ratingIcon'/>
-                  ))}
+        {vehicle.length === 0 ? (
+          <p>no vechile avaliable</p>
+        ):(
+          <>
+            {vehicle.map((car) => (
+              <div className="vehicle-card" key={car.id}>
+                <img src={car.image} alt={car.name} className="vehicle-image" />
+                <div className="car-info">
+                  <div className='car-infoHead'>
+                    <div>
+                      <h3>{car.name}</h3>
+                      <div className="rating">
+                        {Array.from({ length: car.rating }, (_, index) => (
+                          <IoStar key={index} size={20} className='ratingIcon'/>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="price">
+                      <h2>${car.price_per_day}</h2>
+                      <p>per day</p>
+                    </div>
+                  </div>
+                  <div className="details">
+                    <p>
+                      <FaCarSide size={20}/> {car.type}
+                    </p>
+                    <p>
+                      <FaSuitcase size={20}/> {car.luggage} Luggage
+                    </p>
+                    <p>
+                      <GiCarSeat size={20}/> {car.seats} Seats
+                    </p>
+                    <p>
+                      <GiGearStickPattern size={20}/> {car.transmission} 
+                    </p>
+                  </div>
+      
+                  <button className="book-btn">
+                    Book Ride <IoIosCheckmarkCircle />
+                  </button>
                 </div>
               </div>
-              <div className="price">
-                <h2>${car.price}</h2>
-                <p>per day</p>
-              </div>
-            </div>
-            <div className="details">
-              <p>
-                <FaCarSide size={20}/> {car.type}
-              </p>
-              <p>
-                <FaSuitcase size={20}/> {car.luggage} Luggage
-              </p>
-              <p>
-                <GiCarSeat size={20}/> {car.seats} Seats
-              </p>
-              <p>
-                <GiGearStickPattern size={20}/> {car.transmission} 
-              </p>
-            </div>
-
-            <button className="book-btn">
-              Book Ride <IoIosCheckmarkCircle />
-            </button>
-          </div>
-        </div>
-      ))}
+            ))}
+          </>
+        )
+      }
       </section>
       <section className='overlayContent'>
         <div className="backgroundOverlay">

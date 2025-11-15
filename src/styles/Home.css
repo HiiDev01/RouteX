@@ -130,7 +130,7 @@ background-repeat: no-repeat;
 
 .home_trust{
   width: 100%;
-  padding: 8% 6% 3% 6%;
+  padding: 15% 6% 3% 6%;
   gap: 60px;
   min-height: 20vh;
   text-align: center;
@@ -311,6 +311,7 @@ background-repeat: no-repeat;
 }
 .minserDet{
   width: auto;
+  text-align: left;
 }
 .minserDet h5{
   font-size: 1rem;
@@ -428,12 +429,11 @@ background-repeat: no-repeat;
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 2% 5%;
+  padding: 5% 5%;
 }
 .whyUsCon .whyUsDetCon,
 .whyUsCon .whyUsListWrap{
   width: 100%;
-  border: 1px solid black;
 }
 .whyUsCon .whyUsDetCon{
   padding: 20px 10px;
@@ -448,11 +448,11 @@ background-repeat: no-repeat;
 }
 .whyUsCon .whyUsDetCon h2{
   width: 80%;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   color: var(--black);
   font-family: var(--font-one);
   text-transform: capitalize;
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 20px 0px;
   font-weight: 900;
 }
 .whyUsCon .whyUsDetCon p{
@@ -490,7 +490,6 @@ background-repeat: no-repeat;
 }
 .whyUsListCon{
   width: 100%;
-  border: 1px solid red;
   display: flex;
   padding: 0px 20px;
   align-items: stretch;
@@ -509,6 +508,7 @@ background-repeat: no-repeat;
 }
 .whyUsListDet{
   width: auto;
+  text-align: left;
 }
 .whyUsListDet h3{
   color: var(--black);
@@ -562,7 +562,7 @@ background-repeat: no-repeat;
 }
 
 .download-text h2 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: bolder;
   margin-bottom: 20px;
   font-family: var(--font-one);
@@ -583,15 +583,14 @@ background-repeat: no-repeat;
 .store_buttons{
   width: max-content;
   display: flex;
-  align-items: center;
-  align-items: center;
-
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 20px;
 }
 .store_button{
   max-width: 350px;
   width: 190px;
-  height: 70px;
+  height: 50px;
   display: inline-block;
   margin: 0px;
   border-radius: 5px;
@@ -600,7 +599,7 @@ background-repeat: no-repeat;
 .store_button img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .download-image{
   position: absolute;
@@ -608,8 +607,199 @@ background-repeat: no-repeat;
   right: 15%;
 }
 .download-image img{
-  width: 350px;
+  width: 300px;
 }
 
 
 
+/*****************************/
+/*   GLOBAL RESPONSIVE FIX   */
+/*****************************/
+@media (max-width: 1200px) {
+  .home_hero {
+    padding: 5% 4% 5% 4%;
+    gap: 20px;
+  }
+
+  .home_herodet h1 {
+    font-size: 2.5rem;
+  }
+
+  .home_heroimg {
+    min-height: 60vh;
+  }
+
+  .serviceInfo {
+    padding: 5% 6%;
+  }
+
+  .download-text h2 {
+    font-size: 3rem;
+  }
+}
+
+/*****************************/
+/*         TABLET            */
+/*****************************/
+@media (max-width: 1200px) {
+  .home_hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home_herodet p {
+    width: 100%;
+  }
+
+  .heroImgCon {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: none;
+    height: auto;
+  }
+
+  .home_heroimg {
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  /* Step section */
+  .stepwrap {
+    flex-direction: column;
+    padding: 5% 5%;
+  }
+
+  .stepoverlayImgOne,
+  .stepoverlayImgTwo {
+    display: none;
+  }
+
+  /* Service info */
+  .serviceInfo {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .serviceImgCon img {
+    position: static;
+    width: 70%;
+    margin: auto;
+  }
+
+  .serviceInfoDet h2,
+  .minserDet p {
+    width: 100%;
+  }
+
+  /* Diagram box */
+  .diagramDetWrap {
+    flex-direction: column;
+    padding: 0px 5%;
+  }
+
+  .whyUsCon {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whyUsCon .whyUsDetCon h2 {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  .whyUsCon .whyUsDetCon p{
+    font-size: 0.8rem;
+  }
+
+  /* Download */
+  .download-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10% 5%;
+  }
+
+  .download-image {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .download-image img {
+    width: 250px;
+  }
+
+  .store_buttons {
+    justify-content: center;
+  }
+  .filterCardWrap{
+  width: 80%;
+  position: absolute;
+  bottom: -8%;
+  left: 10%;
+}
+
+.serviceDiagramCon{
+  width: 100%;
+  padding: 5%;
+  background: var(--white);
+}
+.serviceDiagram{
+  text-align: center;
+}
+.serviceDiagram h2{
+  width: 70%;
+  font-size: 1.4rem;
+
+}
+.serviceDiagram p{
+  width: 90%;
+  font-size: 0.8rem;
+
+}
+
+
+
+}
+
+/*****************************/
+/*****************************/
+@media (max-width: 600px) {
+  .home_herodet h1 {
+    font-size: 1.8rem;
+  }
+
+  .home_herodet p {
+    font-size: 0.9rem;
+  }
+
+  .herobtnCon {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stepcon {
+    padding: 15px;
+  }
+
+  .serviceInfo {
+    padding: 10% 5%;
+  }
+
+  .serviceInfoDet h2 {
+    font-size: 1.3rem;
+  }
+
+  .download-text h2 {
+    font-size: 2rem;
+  }
+
+  .store_button {
+    width: 160px;
+    height: 60px;
+  }
+
+  .download-image img {
+    width: 200px;
+  }
+}

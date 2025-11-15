@@ -82,3 +82,93 @@
   font-size: 0.95rem;
   font-family: var(--font-two);
 }
+
+
+/* ======================================
+   📌 1200px — Large Tablets / Small Laptops
+======================================*/
+@media screen and (max-width: 1200px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 3% 6%;
+  }
+
+  .team-img {
+    height: 300px;
+  }
+
+  .team-card {
+    min-height: 450px;
+  }
+
+  .team-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* ======================================
+   📌 780px — Tablets
+======================================*/
+@media screen and (max-width: 780px) {
+  .team-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 5%;
+    gap: 25px;
+  }
+
+  .team-img {
+    height: 260px;
+  }
+
+  .team-card {
+    min-height: 420px;
+  }
+
+  .team-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-info p {
+    font-size: 0.9rem;
+  }
+
+  .social-icons {
+    font-size: 18px;
+    gap: 18px;
+  }
+}
+
+
+/* ======================================
+   📌 480px — Mobile / Small Devices
+======================================*/
+@media screen and (max-width: 480px) {
+  .team-container {
+    grid-template-columns: 1fr;
+    padding: 8% 5%;
+    gap: 20px;
+  }
+
+  .team-img {
+    height: 240px;
+  }
+
+  .team-card {
+    min-height: 400px;
+  }
+
+  .team-info h3 {
+    font-size: 1rem;
+  }
+
+  .team-info p {
+    font-size: 0.85rem;
+  }
+
+  .social-icons {
+    font-size: 16px;
+    gap: 15px;
+  }
+}

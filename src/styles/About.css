@@ -302,7 +302,8 @@
 }
 .overlayContent{
   width: 100%;
-  min-height: 60vh;
+  min-height: auto;
+  padding: 5% 0px;
   border: 1px solid black;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),url('../assets/mainbg.jpg');
   background-position: center;
@@ -323,12 +324,12 @@
 }
 .backgroundOverlay h2{
   flex: 1;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: var(--font-two);
   text-transform: capitalize;
   line-height: 1.5;
   color: var(--border);
-  border: 1px solid whitesmoke;
+  font-weight: bolder;
 }
 .backgroundOverlay a{
   display: inline-block;
@@ -343,4 +344,231 @@
   align-items: center;
   gap: 10px;
   font-weight: bolder;
+}
+@media (max-width: 1200px) {
+
+  .about-container {
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  .about-image {
+    height: 380px;
+  }
+
+  .play-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 1.8rem;
+    right: -5%;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .aboutStatText h2 {
+    font-size: 3rem;
+  }
+
+  .how-container h2 {
+    font-size: 2.4rem;
+  }
+
+  .step {
+    padding: 0 10px;
+  }
+
+  .aboutShow {
+    min-height: 60vh;
+  }
+
+  .aboutShowTxt h1 {
+    font-size: 2.2rem;
+  }
+
+  .backgroundOverlay h2 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 780px) {
+
+  .about-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .about-image {
+    height: 320px;
+  }
+
+  .play-btn {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -20px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .aboutStat {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aboutStatText h2 {
+    justify-content: center;
+  }
+
+  .how-container h2 {
+    font-size: 2rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .aboutShow {
+    flex-direction: column;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  .abtShow {
+    flex-direction: column;
+    min-width: 100%;
+  }
+
+  .aboutShowingImg {
+    height: 300px;
+  }
+
+  .aboutShowTxt {
+    padding: 0;
+    text-align: center;
+  }
+
+  .aboutShowTxt h1 {
+    font-size: 2rem;
+  }
+
+  .backgroundOverlay {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0 5%;
+  }
+
+  .backgroundOverlay a {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 480px) {
+
+  .about-container {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    height: 250px;
+  }
+
+  .play-btn {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+    bottom: -15px;
+  }
+
+  .about-content h4 {
+    font-size: 1rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+  }
+
+  .aboutStatIcon {
+    height: 40px;
+  }
+
+  .aboutStatText h2 {
+    font-size: 2.2rem;
+  }
+
+  .how-container {
+    padding: 3rem 1rem;
+  }
+
+  .how-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .step-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .step-icon span {
+    font-size: 1.6rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+  }
+
+  .aboutShow {
+    flex-direction: column;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .aboutShowingImg {
+    height: 200px;
+  }
+
+  .aboutShowTxt h1 {
+    font-size: 1.6rem;
+  }
+
+  .aboutShowLink button {
+    padding: 12px 15px;
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .aboutShowLink a {
+    font-size: 1rem;
+  }
+
+  .backgroundOverlay {
+    flex-direction: column;
+    padding: 0 3%;
+    gap: 15px;
+  }
+
+  .backgroundOverlay h2 {
+    font-size: 1.7rem;
+  }
+
+  .backgroundOverlay a {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
 }

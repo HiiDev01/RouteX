@@ -1,70 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import '../styles/DealerCar.css'
 import { SiHonda,SiAudi,SiNissan,SiMazda,SiToyota } from "react-icons/si";
 import CarCard from '../component/CarCard';
 import Slider from "react-slick";
 import ServiceNav from './ServiceNav';
+import { supabase } from '../SupabaseClient/Client';
 
-const carBrands = [
-  { name: "Honda", icon: <SiHonda size={25} /> },
-  { name: "Audi", icon: <SiAudi size={25} /> },
-  { name: "Nissan", icon: <SiNissan size={25} /> },
-  { name: "Mazda", icon: <SiMazda size={25} /> },
-  { name: "Toyota", icon: <SiToyota size={25} /> },
-];
-const cars = [
-  {
-    id: 1,
-    year: 2020,
-    name: "Honda Pilot",
-    price: 38500,
-    monthly: 322,
-    mileage: 20,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/honda-pilot.png",
-    isFavourite: true,
-  },
-  {
-    id: 2,
-    year: 2019,
-    name: "Honda Civic Si Sedan",
-    price: 25200,
-    monthly: 299,
-    mileage: 30,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/honda-civic.png",
-    isFavourite: false,
-  },
-  {
-    id: 3,
-    year: 2017,
-    name: "Clarity Plug-In Hybrid",
-    price: 33400,
-    monthly: 300,
-    mileage: 15,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/clarity.png",
-    isFavourite: false,
-  },
-    {
-    id: 4,
-    year: 2017,
-    name: "Clarity Plug-In Hybrid",
-    price: 33400,
-    monthly: 300,
-    mileage: 15,
-    transmission: "Auto",
-    fuel: "Diesel",
-    image: "/images/clarity.png",
-    isFavourite: false,
-  },
-];
 
 const DealerCar = () => {
-  const [activeBrand, setActiveBrand] = useState(carBrands[0].name);
+  const [activeType, setActiveType] = useState(null);
+  const [type, setType] = useState([]);
+  const [cars, setCars] = useState([])
   var settings = {
       dots: false,
       infinite: true,
@@ -99,6 +45,51 @@ const DealerCar = () => {
         }
       ]
   };
+
+  useEffect(()=>{
+    const fetchBrandButton = async() =>{
+      try {
+        const {data, error} = await supabase
+        .from('cars')
+        .select("type", {distinct: true})
+        if(error){
+          console.log(error.message)
+          return;
+        }
+        const uniqueTypes = [...new Set(data.map((item) => item.type))].map(
+          (t, index) => ({ id: index, type: t })
+        );
+        setType(uniqueTypes);
+
+        if (uniqueTypes.length > 0) {
+          setActiveType(uniqueTypes[0].type);
+          fetchCarsByBrand(uniqueTypes[0].type);
+        }
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+    fetchBrandButton()
+  }, []);
+
+  const fetchCarsByBrand = async (band) => {
+    const { data, error } = await supabase
+      .from("cars")
+      .select("*")
+      .eq("type", band);
+      console.log(data)
+    if (error) {
+      console.log(error.message);
+      return;
+    }
+
+    setCars(data);
+  };
+
+  const handleBrandClick = (brand) => {
+    setActiveType(brand.type);
+    fetchCarsByBrand(brand.type);
+  };
   return (
     <>
       <section className='service'>
@@ -107,9 +98,9 @@ const DealerCar = () => {
           <h4>Explore of top deal from out top-rated dealer</h4>
         </div>
         <ServiceNav 
-          activeBrand={activeBrand} 
-          carBrands={carBrands}
-          setActiveBrand={setActiveBrand}
+          activeType={activeType} 
+          type={type}
+          typeClick={handleBrandClick}
         />
         <article className='car_list'>
           <Slider {...settings}>

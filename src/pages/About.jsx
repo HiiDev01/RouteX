@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import orangecar from '../assets/wrag.png'
 import '../styles/About.css';
 import DealerCar from '../component/DealerCar';
@@ -19,10 +19,12 @@ import carImg from '../assets/car.png';
 import Footer from '../component/footer/Footer';
 import Testimonial from '../component/Testimonial';
 import Steps from '../component/Steps';
+import { supabase } from '../SupabaseClient/Client';
 
 
 
 const About = () => {
+  const [car, setCar] = useState([])
 const Lists = [
   {
     img: parkingImg,
@@ -57,13 +59,7 @@ const steps = [
       text: "To contribute to positive change and achieve our sustainability goals with many extraordinary",
     },
 ];
-const carBrands = [
-  { name: "Honda", icon: <SiHonda size={25} /> },
-  { name: "Audi", icon: <SiAudi size={25} /> },
-  { name: "Nissan", icon: <SiNissan size={25} /> },
-  { name: "Mazda", icon: <SiMazda size={25} /> },
-  { name: "Toyota", icon: <SiToyota size={25} /> },
-]
+
 const cars = [
   {
     id: 1,
@@ -114,7 +110,25 @@ const cars = [
     isFavourite: false,
   },
 ];
-const [activeBrand, setActiveBrand] = useState(carBrands[0].name);
+
+useEffect(()=>{
+  const fetchCars = async()=>{
+    try {
+      const {data, error} = await supabase
+      .from("cars")
+      .select("*")
+      if(error){
+        console.log(error.message)
+        return;
+      }
+      setCar(data);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  fetchCars();
+}, [])
+
 
   return (
     <>
@@ -152,24 +166,27 @@ const [activeBrand, setActiveBrand] = useState(carBrands[0].name);
       </section>
       <Steps steps={steps}/>
       <section className='aboutShowSection'>
-        <ServiceNav carBrands={carBrands} activeBrand={activeBrand} setActiveBrand={setActiveBrand}/>
+        
+
+
+
         <div className='aboutShow'>
-          {cars.map((car)=>(
-            <div key={car.id} className='abtShow'>
+          {car.map((cars)=>(
+            <div key={cars.id} className='abtShow'>
               <div className='aboutShowingImg'>
                 <img src={CarImg} alt={CarImg.name} />
               </div>
               <div className='aboutShowTxt'>
                 <div className='aboutShowTxtHead'>
-                  <h1>$ {car.price}</h1>
+                  <h1>$ {cars.price_per_day}</h1>
                   <small>rent per day</small>
                 </div>
                 <div className='aboutShowTxtBody'>
-                  <p><FaCar size={25} className='abtIcon'/> Model: {car.name}</p>
-                  <p><GiCarDoor size={25} className='abtIcon'/> Doors: {car.door}</p>
-                  <p><GiCarSeat size={25} className='abtIcon'/> Type: {car.fuel}</p>
+                  <p><FaCar size={25} className='abtIcon'/> Model: {cars.name}</p>
+                  <p><GiCarDoor size={25} className='abtIcon'/> Doors: {cars.door}</p>
+                  <p><GiCarSeat size={25} className='abtIcon'/> Type: {cars.fuel}</p>
                   <p><PiBagFill size={25} className='abtIcon'/>  Luggage: 2 Suitcases / 2 Bags</p>
-                  <p><GiGearStickPattern size={25} className='abtIcon'/> Transmission: {car.transmission}</p>
+                  <p><GiGearStickPattern size={25} className='abtIcon'/> Transmission: {cars.transmission}</p>
                 </div>
                 <div className='aboutShowLink'>
                   <button>book ride <IoMdCheckmarkCircle size={25}/></button>

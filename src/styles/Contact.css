@@ -53,6 +53,7 @@
   color: var(--black);
 }
 .ContactForm{
+  width: 100%;
   flex: 1;
   padding: 10px 5%;
 }
@@ -112,4 +113,108 @@
 .ContactForm button:hover{
   opacity: 0.9;
   transition: 0.2s ease-in-out;
+}
+
+/* ======================================
+   📌 1200px — Large Tablets / Small Laptops
+======================================*/
+@media screen and (max-width: 1200px) {
+  .contactSec {
+    padding: 5% 5%;
+    gap: 30px;
+  }
+
+  .contactDetail {
+    width: 45%;
+  }
+
+  .contacts h2 {
+    font-size: 3rem;
+  }
+
+  .contactparatxt {
+    font-size: 1.1rem;
+  }
+
+  .contactInfo p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ======================================
+   📌 780px — Tablets
+======================================*/
+@media screen and (max-width: 780px) {
+  .contactSec {
+    flex-direction: column;
+    padding: 6% 5%;
+  }
+
+  .contactDetail {
+    width: 100%;
+  }
+
+  .contacts h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .contactparatxt {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .contactInfo {
+    gap: 25px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+  }
+
+  .ContactForm {
+    padding: 0px 2%;
+  }
+
+  .ContactForm button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ======================================
+   📌 480px — Mobile / Small Devices
+======================================*/
+@media screen and (max-width: 480px) {
+  .contactSec {
+    padding: 8% 5%;
+  }
+
+  .contacts h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .contactparatxt {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .contactInfo p {
+    font-size: 1rem;
+  }
+
+  .contactField label {
+    font-size: 0.9rem;
+  }
+
+  .contactField input,
+  .contactField textarea {
+    padding: 15px 10px;
+  }
+
+  .ContactForm button {
+    padding: 15px;
+    font-size: 1rem;
+  }
 }

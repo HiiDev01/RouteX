@@ -9,7 +9,8 @@
 .showcaseCon{
   flex: 1;
   width: 100%;
-  border: 1px solid blue;
+  background-color: var(--white);
+  box-shadow: 0px 0px 1px var(--border);
 }
 .showcaseMain{
   flex: 2;
@@ -23,7 +24,7 @@
   display: block;
   margin: 0px 0px 3px 0px;
 }
-.showcaseCon ul li .showcaseBtn{
+.showcaseBtn{
   width: 100%;
   border: none;
   outline: none;
@@ -36,7 +37,7 @@
   cursor: pointer;
   user-select: none;
   padding: 20px 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   border-radius: 0px;
   text-align: left;
@@ -47,14 +48,13 @@
   outline: none;
   background: var(--secondary);
   color: var(--white);
-  font-size: 1rem;
   font-family: var(--font-two);
   font-weight: bolder;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
   padding: 20px 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   border-radius: 0px;
   text-align: left;
@@ -127,4 +127,90 @@
   justify-content: center;
   gap: 10px;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .carShowcase {
+    gap: 15px;
+    padding: 2% 3%;
+  }
+
+  .showcaseBtn,
+  .showcaseBtnActive {
+    padding: 15px 15px;
+    font-size: 1rem;
+  }
+
+  .showcaseDetail h2 {
+    font-size: 1.7rem;
+  }
+
+  .showcaseDetail table tr td {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===========================
+   📌 780px — Tablets
+   =========================== */
+@media (max-width: 780px) {
+  .carShowcase {
+    flex-direction: column;
+    padding: 3% 5%;
+  }
+
+  .showcaseCon {
+    width: 100%;
+    flex: none;
+  }
+
+  .showcaseMain {
+    width: 100%;
+    flex: none;
+  }
+
+  .showcaseBtn,
+  .showcaseBtnActive {
+    padding: 18px 15px;
+    font-size: 1rem;
+  }
+
+  .showcaseBtnActive::after {
+    display: none; /* Arrow removed to avoid layout issues */
+  }
+
+  .showcaseDetail h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===========================
+   📌 Small Screens (Mobile < 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .carShowcase {
+    padding: 5% 4%;
+    gap: 10px;
+  }
+
+  .showcaseBtn,
+  .showcaseBtnActive {
+    padding: 15px 12px;
+    font-size: 0.9rem;
+  }
+
+  .showcaseDetail h2 {
+    font-size: 1.4rem;
+    padding: 12px 15px;
+  }
+
+  .showcaseDetail table tr td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .showcaseDetail button {
+    font-size: 1.2rem;
+    padding: 12px 0px;
+  }
 }

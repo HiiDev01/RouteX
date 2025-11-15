@@ -150,3 +150,135 @@
   line-height: 1.5;
   color: orangered;
 }
+
+/* ================================
+   👉 1200px (Large Tablets / Small Laptops)
+===================================*/
+@media screen and (max-width: 1200px) {
+  .vechileCon {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .vehicle-image {
+    height: 220px;
+  }
+
+  .price h2 {
+    font-size: 1.7rem;
+  }
+
+  .DbookingCon {
+    padding: 3% 5%;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .DbookingCon h2 {
+    font-size: 2rem;
+  }
+
+  .DbookingCon h3 {
+    font-size: 2rem;
+  }
+}
+
+
+/* ================================
+   👉 780px (Tablets)
+===================================*/
+@media screen and (max-width: 780px) {
+  .vechileCon {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 5%;
+  }
+
+  .vehicle-image {
+    height: 200px;
+  }
+
+  .car-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .price h2 {
+    font-size: 1.5rem;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+
+  .DbookingCon h2 {
+    font-size: 1.8rem;
+  }
+
+  .DbookingCon h3 {
+    font-size: 1.8rem;
+  }
+
+  .DbookingCon p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ================================
+   👉 480px and below (Small Screens / Mobile)
+===================================*/
+@media screen and (max-width: 480px) {
+  .vechileCon {
+    grid-template-columns: 1fr;
+    padding: 6%;
+    gap: 20px;
+  }
+
+  .vehicle-image {
+    height: 180px;
+  }
+
+  .car-infoHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .price h2 {
+    font-size: 1.4rem;
+  }
+
+  .details p {
+    font-size: 0.95rem;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .DbookingCon {
+    flex-direction: column;
+    text-align: center;
+    padding: 10% 5%;
+    gap: 15px;
+  }
+
+  .DbookingCon h2,
+  .DbookingCon h3 {
+    font-size: 1.6rem;
+  }
+
+  .DbookingCon p {
+    font-size: 1rem;
+  }
+}

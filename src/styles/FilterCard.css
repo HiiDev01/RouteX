@@ -1,5 +1,6 @@
 .filtercard{
   width: max-content;
+  height: auto;
   background: rgba(255, 255, 255, 1) url('../assets/patternbg.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -24,37 +25,30 @@
 .filtercardItem{
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  padding: 15px;
+  justify-content: flex-start;
   gap: 10px;
 }
-.filterCardCon{
+.filterBox{
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.filterCardCon select{
-  height: 40px;
-  padding: 0px 10px;
-  font-size: 0.9rem;
+
+.filterBox select{
+  padding: 10px 10px;
+  font-size: 1rem;
   color: var( --para-color);
   outline: none;
 }
-.dateCon{
-  height: 40px;
-  border: 1px solid var(--border);
-}
-.filterCardCon  .datePickerInput{
-  width: max-content;
-  height: inherit;
+.filterBox input{
+  width: 100%;
   outline: none;
-  height: 40px;
-  outline: none;
-  padding: 0px 10px;
-  font-size: 0.9rem;
+  padding: 10px 10px;
+  font-size: 0.8rem;
+  font-family: var(--font-two);
   color: var( --para-color);
 }
-.filterCardCon label{
+.filterBox  label{
   font-size: 0.8rem;
   font-family: var(--font-one);
   font-weight: 500;
@@ -69,7 +63,7 @@
   gap: 8px;
   margin: 0px 0px 5px 0px;
 }
-.filterCardCon label span{
+.filterBox label span{
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--secondary);
@@ -89,7 +83,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 10px 15px;
+  padding: 10px 30px;
   text-transform: capitalize;
 }
 .submitFilterbtn span{
@@ -98,44 +92,48 @@
   justify-content: center;
 }
 
+@media (max-width: 1200px) {
 
-
-/* --- Large Tablets --- */
-@media (max-width: 992px) {
   .filtercard {
-    padding: 3% 4%;
+    width: 100%;
+    padding: 3%;
   }
 
   .filtercardItem {
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
-  .filterCardCon {
-    flex: 1 1 45%;
-    min-width: 220px;
+  .filterBox {
+    flex: 1 1 30%;
+    min-width: 250px;
   }
 
   .submitFilterbtn {
     flex: 1 1 100%;
-    max-width: 100%;
   }
 }
 
-/* --- Small Tablets / Landscape Phones --- */
-@media (max-width: 768px) {
+
+
+/* --- 780px (tablets / landscape phones) --- */
+@media (max-width: 780px) {
+
+  .filtercard {
+    width: 100%;
+    padding: 4%;
+  }
+
   .filtercardItem {
     flex-direction: column;
-    align-items: stretch;
     gap: 20px;
   }
 
-  .filterCardCon {
+  .filterBox {
     width: 100%;
   }
 
-  .filterCardCon select,
-  .filterCardCon .datePickerInput {
+  .filterBox select,
+  .filterBox input {
     width: 100%;
   }
 
@@ -144,8 +142,11 @@
   }
 }
 
-/* --- Mobile Phones --- */
+
+
+/* --- 480px (small mobile screens) --- */
 @media (max-width: 480px) {
+
   .filtercard {
     width: 100%;
     padding: 5%;
@@ -154,21 +155,22 @@
   .filtercardItem {
     flex-direction: column;
     gap: 15px;
-    padding: 10px;
   }
 
-  .filterCardCon label {
+  .filterBox label {
     font-size: 0.75rem;
   }
 
-  .filterCardCon select,
-  .filterCardCon .datePickerInput {
+  .filterBox select,
+  .filterBox input {
     font-size: 0.85rem;
+    padding: 8px 10px;
   }
 
   .submitFilterbtn {
     width: 100%;
     font-size: 0.9rem;
-    letter-spacing: 1px;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
   }
 }

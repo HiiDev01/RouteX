@@ -22,8 +22,8 @@ const CarCard = ({ car }) => {
         <span className="car-year">{car.year}</span>
         <h3>{car.name}</h3>
         <div className="cardprice">
-          <span className="main-price">${car.price.toLocaleString()}</span>
-          <span className="per-month">| ${car.monthly}/month</span>
+        <span className="main-price">${car.full_price ? car.full_price.toLocaleString() : 0}</span>
+        <span className="per-month">| ${car.price_per_day || 0}/month</span>
         </div>
 
         <div className="car-details">

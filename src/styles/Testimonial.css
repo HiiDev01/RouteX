@@ -68,7 +68,7 @@
 }
 .mySwiper .swiper-button-next {
   right: 10px;
-  top: 100%;
+  z-index: 999;
 }
 
 .mySwiper .swiper-button-prev {
@@ -82,12 +82,15 @@
   font-weight: bold;
   margin: 0px 10px;
 }
+
 .testCard{
-  width: 100%;
+  width: 70%;
   background-color: var(--light-secondary);
   padding: 40px;
   background-color: #f5f5f5;
   box-shadow: 0px 1px 2px var(--border);
+  margin: 0px auto;
+  border-radius: 5px;
 }
 .testCardHead{
   display: flex;
@@ -129,4 +132,127 @@
 .testRate{
   color: var(--secondary);
   font-size: 1.5rem;
+}
+
+
+@media (max-width: 1200px) {
+  .testimonial {
+    padding: 4% 4%;
+  }
+
+  .testimonialHead h2 {
+    font-size: 1.8rem;
+  }
+
+  .testimonialHead h3 {
+    font-size: 1.1rem;
+  }
+
+  .testimonialHead p {
+    width: 70%;
+    font-size: 0.9rem;
+  }
+
+  .testCard {
+    padding: 35px;
+  }
+
+  .testCardHead img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .testDet {
+    font-size: 1.35rem;
+  }
+}
+
+/* =====================================
+   📌 780px — Tablets
+   ===================================== */
+@media (max-width: 780px) {
+  .testimonial {
+    padding: 6% 5%;
+  }
+
+  .testimonialHead h2 {
+    font-size: 1.6rem;
+  }
+
+  .testimonialHead p {
+    width: 85%;
+    font-size: 0.85rem;
+  }
+
+  .mySwiper .swiper-button-next,
+  .mySwiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slide {
+    padding: 40px 15px;
+  }
+
+  .testCard {
+    padding: 30px;
+  }
+
+  .testDet {
+    font-size: 1.2rem;
+  }
+
+  .testCardHead img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* =====================================
+   📌 Small Screens — Mobile (<480px)
+   ===================================== */
+@media (max-width: 480px) {
+  .testimonial {
+    padding: 8% 4%;
+  }
+
+  .testimonialHead h2 {
+    font-size: 1.4rem;
+  }
+
+  .testimonialHead h3 {
+    font-size: 1rem;
+  }
+
+  .testimonialHead p {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .mySwiper .swiper-button-next,
+  .mySwiper .swiper-button-prev {
+    display: none; /* Navigation removed for cleaner mobile layout */
+  }
+
+  .slide {
+    padding: 30px 10px;
+    margin: 0px 5px;
+  }
+
+  .testCard {
+    padding: 25px;
+  }
+
+  .testCardHead img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .testDet {
+    font-size: 1rem;
+  }
+
+  .testRate {
+    font-size: 1.2rem;
+  }
 }

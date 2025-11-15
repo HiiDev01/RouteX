@@ -60,36 +60,38 @@ const Testimonial = () => {
             quiet do vexed.
           </p>
         </div>
-        <Swiper
-            modules={[Navigation, Pagination]}
-            slidesPerView={2}
-            spaceBetween={20}   
-            navigation
-            pagination={{ clickable: true }}
-            className="mySwiper"
-          >
-            {testimonials.map((item, i)=>(
-              <SwiperSlide key={i}>
-                <div className="testCard">
-                  <div className='testCardHead'>
-                    <img
-                        src={item.image}
-                        alt={item.name}
-                        className=""
-                    />
-                    <div>
-                      <h3 className="">{item.name}</h3>
-                      <p className="">{item.role}</p>
+        <div className='SwiperCon'>
+          <Swiper
+              modules={[Navigation, Pagination]}
+              slidesPerView={1}
+              spaceBetween={20}   
+              navigation
+              pagination={{ clickable: true }}
+              className="mySwiper"
+            >
+              {testimonials.map((item, i)=>(
+                <SwiperSlide key={i}>
+                  <div className="testCard">
+                    <div className='testCardHead'>
+                      <img
+                          src={item.image}
+                          alt={item.name}
+                          className=""
+                      />
+                      <div>
+                        <h3 className="">{item.name}</h3>
+                        <p className="">{item.role}</p>
+                      </div>
                     </div>
+                    <p className="testDet">"{item.message}"</p>
+                    <p className="testRate">
+                      {"★".repeat(Math.round(item.rating))}
+                    </p>
                   </div>
-                  <p className="testDet">"{item.message}"</p>
-                  <p className="testRate">
-                    {"★".repeat(Math.round(item.rating))}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
-        </Swiper>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
       </section>
     </>
   )

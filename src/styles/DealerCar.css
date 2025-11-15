@@ -27,3 +27,52 @@
   font-weight: bolder;
   text-transform: capitalize;
 }
+
+@media (max-width: 1200px) {
+  .service {
+    padding: 5% 4%;
+  }
+
+  .serviceHead h4 {
+    width: 60%;
+    font-size: 1.8rem;
+  }
+
+  .serviceHead p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===========================
+   =========================== */
+@media (max-width: 780px) {
+  .service {
+    padding: 6% 5%;
+  }
+
+  .serviceHead h4 {
+    width: 80%;
+    font-size: 1.6rem;
+  }
+
+  .serviceHead p {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   =========================== */
+@media (max-width: 480px) {
+  .service {
+    padding: 8% 4%;
+  }
+
+  .serviceHead h4 {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+  .serviceHead p {
+    font-size: 0.9rem;
+  }
+}

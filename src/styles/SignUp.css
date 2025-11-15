@@ -144,3 +144,111 @@
   border-radius: 50%;
   border: 2px solid #fff;
 }
+
+/* =====================================================
+   📌 1200px (Large tablets / small desktops)
+===================================================== */
+@media screen and (max-width: 1200px) {
+  .auth-left, .auth-right {
+    padding: 40px;
+  }
+
+  .auth-left h2 {
+    font-size: 1.7rem;
+  }
+
+  .quote h1 {
+    font-size: 2rem;
+  }
+
+  .quote-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =====================================================
+   📌 780px (Tablets)
+===================================================== */
+@media screen and (max-width: 780px) {
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .auth-left, .auth-right {
+    flex: none;
+    width: 100%;
+    padding: 40px 25px;
+  }
+
+  .auth-right {
+    border-radius: 0;
+    padding: 50px 25px;
+    order: -1; /* Moves blue section to top */
+  }
+
+  .quote {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .quote h1 {
+    font-size: 2rem;
+  }
+
+  .author {
+    justify-content: center;
+  }
+}
+
+
+/* =====================================================
+   📌 480px (Mobile phones)
+===================================================== */
+@media screen and (max-width: 480px) {
+  .auth-left, .auth-right {
+    padding: 30px 20px;
+  }
+
+  .auth-left h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .auth-form input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .auth-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .quote-icon {
+    font-size: 1.7rem;
+  }
+
+  .quote h1 {
+    font-size: 1.7rem;
+  }
+
+  .quote-text {
+    font-size: 0.9rem;
+  }
+
+  .author-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}

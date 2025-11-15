@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Home.css'
 import orangecar from '../assets/orangeW.png'
 import rangeImg from '../assets/range.png';
@@ -36,6 +36,23 @@ const Home = () => {
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+  {/*useEffect(()=>{
+   const  handleFecth = async()=>{
+    try {
+      const {data, error} = await supabase
+      .from('cars')
+      .select('*')
+      if(error){
+        console.log('error fetching data')
+        return;
+      }
+      console.log(data)
+    } catch (error) {
+      console.log(error, 'error fetching')
+    }
+   } 
+   handleFecth();
+  }, [])*/}
   return (
     <div>
       <header>
@@ -187,7 +204,7 @@ const Home = () => {
       </section>
       <Testimonial/>
       <Faq activeIndex={activeIndex} toggleAccordion={toggleAccordion}/>
-      <section className="download-app">
+     {/* <section className="download-app">
           <div className="download-container">
             <div className="download-text">
               <h2>
@@ -217,6 +234,7 @@ const Home = () => {
             </div>
           </div>
       </section>
+      */}
       <section>
         < Footer />
       </section>

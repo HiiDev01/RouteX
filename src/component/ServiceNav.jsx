@@ -1,24 +1,23 @@
 import React from 'react'
 import '../styles/ServiceNav.css'
 
-const ServiceNav = ({activeBrand,setActiveBrand,carBrands}) => {
+const ServiceNav = ({activeType, type, typeClick}) => {
   return (
     <>
       <div className='servicenav'>
         <ul className='brand_list'>
-          {carBrands.map((brand, index) => (
-            <li key={index}>
+          {type.map(brand => (
+            <li key={brand.id}>
               <button 
-                className={`brand_btn ${activeBrand === brand.name ? "active" : ""}`}
-                onClick={() => setActiveBrand(brand.name)}
+                className={`brand_btn ${activeType === brand.type ? "active" : ""}`}
+                onClick={() => typeClick(brand)}
               >
-                <span>{brand.icon}</span>
-                {brand.name}
+                {brand.type}
               </button>
             </li>
           ))}
           <li>
-            <a href="/">explore 20+</a>
+            <a href="/vehicle">explore 20+</a>
           </li>
         </ul>
       </div>

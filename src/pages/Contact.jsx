@@ -27,11 +27,11 @@ const Contact = () => {
           <form action="">
             <div className='contactField'>
               <label htmlFor="">Full Name  <sup>*</sup></label>
-              <input type="text" name="" id=""/>
+              <input type="text" name="" id="" required/>
             </div>
             <div className='contactField'>
               <label htmlFor="">Email Address <sup>*</sup></label>
-              <input type="email" name="" id=""/>
+              <input type="email" name="" id="" required/>
             </div>
             <div className='contactField'>
               <label htmlFor="">Tell us about it <sup>*</sup></label>
